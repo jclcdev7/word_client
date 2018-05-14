@@ -1,0 +1,32 @@
+<!-- verified 11-05-2018 -->
+<h4>Transnational Issues</h4>
+<div class="mdl-card__media" *ngIf="issue?.dispute !=''">
+   <div class="mdl-layout-title">Disputes - international:</div>
+</div>
+<div>
+   <p>{{issue?.dispute}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="issue?.refug_displaced?.refugee !='' || issue?.refug_displaced?.idps !='' || issue?.refug_displaced?.stateless !=''">
+   <div class="mdl-layout-title">Refugees and internally displaced persons:</div>
+</div>
+<div>
+   <p *ngIf="issue?.refug_displaced?.refugee"><b>refugees: </b>{{issue?.refug_displaced?.refugee}}</p>
+   <p *ngIf="issue?.refug_displaced?.idps"><b>IDPs: </b>{{issue?.refug_displaced?.idps}}</p>
+   <p *ngIf="issue?.refug_displaced?.stateless"><b>stateless persons: </b>{{issue?.refug_displaced?.stateless}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="issue?.traffic_pers?.current && issue?.traffic_pers?.tier">
+   <div class="mdl-layout-title">Trafficking in persons:</div>
+</div>
+<div>
+   <p *ngIf="issue?.traffic_pers?.current"><b>current situation: </b>{{issue?.traffic_pers?.current}}</p>
+   <p *ngIf="issue?.traffic_pers?.tier"><b>tier rating: </b>{{issue?.traffic_pers?.tier}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="issue?.drugs !=''">
+   <div class="mdl-layout-title">Illicit drugs:</div>
+</div>
+<div>
+   <p *ngFor="let p of issue?.drugs">{{p}}</p>
+</div>

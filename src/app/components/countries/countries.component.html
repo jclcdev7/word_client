@@ -1,0 +1,29 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--3-col"></div>
+  <div class="mdl-cell mdl-cell--6-col">
+
+    <table class="mdl-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;">
+      <thead>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">ENTITY</td>
+          <td>GEC</td>
+          <td>ISO 3166-2A</td>
+          <td>ISO 3166-3A</td>
+          <td>STANAG</td>
+          <td>INTERNET</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of countries">
+          <td class="mdl-data-table__cell--non-numeric">{{country.ENTITY}}</td>
+          <td style="padding-top: 6px;">{{country.GEC}}</td>
+          <td style="padding-top: 6px;">{{country.ISO_3166_2A}}</td>
+          <td style="padding-top: 6px;">{{country.ISO_3166_3A}}</td>
+          <td style="padding-top: 6px;">{{country.STANAG}}</td>
+          <td style="padding-top: 2px;">{{country.INTERNET}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col"></div>
+</div>

@@ -1,0 +1,93 @@
+<div class="mdl-grid">
+
+  <div class="mdl-cell mdl-cell--4-col">
+   <h5>Choose a country</h5>
+   <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+      <select class="mdl-selectfield__select" [(ngModel)]="mycountry">
+         <option value=""></option>
+         <option *ngFor="let item of maliste"  [ngValue]="item">{{item?.ENTITY}}</option>
+      </select>
+   </div>
+</div>
+
+<div class="mdl-cell mdl-cell--4-col">
+   <div class="mdl-card" *ngIf="mycountry?.ENTITY">
+     <div class="mdl-card__title">
+       <h2 class="mdl-card__title-text">{{mycountry?.ENTITY}} ({{mycountry?.GEC}})</h2>
+     </div>
+     <div class="mdl-card__media">
+       <img src="assets/flags/{{mycountry?.GEC}}.gif" width="180" height="120" border="0" alt="" style="padding:20px;">
+     </div>
+   </div>
+</div>
+<!-- display the map -->
+<div class="mdl-cell mdl-cell--4-col">
+   <div class="mdl-card" *ngIf="mycountry?.ENTITY">
+     <div class="mdl-card__media">
+       <img src="assets/map/{{mycountry?.GEC.toLowerCase()}}.gif" width="180" height="180" border="0" alt="" style="padding:20px;">
+     </div>
+   </div>
+</div>
+</div>
+
+<div class="mdl-grid">
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-tabs__tab-bar">
+      <a href="#intro-panel" class="mdl-tabs__tab is-active">Introduction</a>
+      <a href="#geo-panel" class="mdl-tabs__tab">Geography</a>
+      <a href="#people-panel" class="mdl-tabs__tab">People and Society</a>
+      <a href="#gov-panel" class="mdl-tabs__tab">Government</a>
+      <a href="#eco-panel" class="mdl-tabs__tab">Economy</a>
+      <a href="#energ-panel" class="mdl-tabs__tab">Energy</a>
+      <a href="#comm-panel" class="mdl-tabs__tab">Communications</a>
+      <a href="#trans-panel" class="mdl-tabs__tab">Transportation</a>
+      <a href="#milsec-panel" class="mdl-tabs__tab">Military & Security</a>
+      <a href="#terror-panel" class="mdl-tabs__tab">Terrorism</a>
+      <a href="#nat-panel" class="mdl-tabs__tab">Transnational Issues</a>
+  </div>
+
+  <div class="mdl-tabs__panel is-active" id="intro-panel">
+    <country-intro [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-intro>
+  </div>
+
+  <div class="mdl-tabs__panel" id="geo-panel">
+     <country-geography [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-geography>
+  </div>
+
+  <div class="mdl-tabs__panel" id="people-panel">
+     <country-people [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-people>
+ </div>
+
+ <div class="mdl-tabs__panel" id="gov-panel">
+    Government
+</div>
+
+<div class="mdl-tabs__panel" id="eco-panel">
+   Economy
+</div>
+
+<div class="mdl-tabs__panel" id="energ-panel">
+   Energy
+</div>
+
+<div class="mdl-tabs__panel" id="comm-panel">
+   Communications
+</div>
+
+<div class="mdl-tabs__panel" id="trans-panel">
+   <country-transport [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-transport>
+</div>
+
+<div class="mdl-tabs__panel" id="milsec-panel">
+   <country-milsec [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-milsec>
+</div>
+
+<div class="mdl-tabs__panel" id="terror-panel">
+   <country-terror [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-terror>
+</div>
+
+<div class="mdl-tabs__panel" id="nat-panel">
+   <country-issues [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-issues>
+</div>
+</div>
+</div>

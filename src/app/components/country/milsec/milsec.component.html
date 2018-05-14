@@ -1,0 +1,30 @@
+<!-- verified 11-05-2018 -->
+<h4>Military & Security</h4>
+<div class="mdl-card__media" *ngIf="milsec?.mil_expend?.histo.length > 0">
+   <div class="mdl-layout-title">Military expenditures:</div>
+</div>
+<div>
+   <p *ngFor="let p of milsec?.mil_expend?.histo">{{p}}</p>
+   <p *ngIf="milsec?.mil_expend?.rank"><b>country comparison to the world: </b>{{milsec?.mil_expend?.rank}}</p>
+</div>
+
+<div class="mdl-card__media"  *ngIf="milsec?.branches">
+   <div class="mdl-layout-title">Military branches:</div>
+</div>
+<div>
+   <p>{{milsec?.branches}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="milsec?.obligation">
+   <div class="mdl-layout-title">Military service age and obligation:</div>
+</div>
+<div>
+   <p>{{milsec?.obligation}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="milsec?.notes">
+   <div class="mdl-layout-title">Military - note:</div>
+</div>
+<div>
+   <p>{{milsec?.notes}}</p>
+</div>

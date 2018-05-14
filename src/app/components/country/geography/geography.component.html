@@ -1,0 +1,51 @@
+<p><span class="mdl-layout-title">Locations:</span>{{geo?.location}}</p>
+<p><span class="mdl-layout-title">Geographic coordinates: </span>{{geo?.coordinate}}</p>
+<p><span class="mdl-layout-title">Map references: </span>{{geo?.map}}</p>
+<p><span class="mdl-layout-title">Area: </span>
+   <ul>
+      <li><b>Total: </b>{{geo?.area?.total}}</li>
+      <li><b>Land: </b>{{geo?.area?.land}}</li>
+      <li><b>Water: </b>{{geo?.area?.water}}</li>
+      <li><b>country comparison to the world: </b>{{geo?.area?.position}}</li>
+   </ul>
+<p><span class="mdl-layout-title">Area - comparative: </span>{{geo?.area_com}}</p>
+<p><span class="mdl-layout-title">Land boundaries: </span>
+   <ul>
+      <li><b>Total: </b>{{geo?.boundaries?.total}}</li>
+      <li><b>border countries: </b>{{geo?.boundaries?.countries}}
+         <!--span *ngFor="let bound of geo?.boundaries?.countries">{{bound.ctry}} = {{bound.length}},</span-->
+      </li>
+   </ul>
+<p><span class="mdl-layout-title">Coastline: </span>{{geo?.coastlines}}</p>
+<p><span class="mdl-layout-title">Maritimes Claims: </span>{{geo?.claims}}</p>
+<p><span class="mdl-layout-title">Climate: </span>{{geo?.climate}}</p>
+<p><span class="mdl-layout-title">Terrain: </span>{{geo?.terrain}}</p>
+<p><span class="mdl-layout-title">Elevation: </span>
+   <ul>
+      <li><b>mean elevation: </b>{{geo?.elevation?.mean}}</li>
+      <li><b>elevation extremes: </b>
+         <ul>Lowest point: {{geo?.elevation?.extremes?.lowest}},
+         highest point: {{geo?.elevation?.extremes?.highest}}</ul>
+   </ul>
+<p><span class="mdl-layout-title">Natural resources: </span>
+   <span *ngFor="let res of geo?.resources">{{res}}, </span>
+</p>
+<p><span class="mdl-layout-title">Land use: </span>
+   <ul>
+      <li><b>agricultural land: </b>{{geo?.land_use?.agricultural}}</li>
+      <li>arable land: {{geo?.land_use?.arable}}</li>
+      <li>permanent crops: {{geo?.land_use?.crops}}</li>
+      <li>permanent pasture: {{geo?.land_use?.pasture}}</li>
+      <li><b>forest: </b>{{geo?.land_use?.forest}}</li>
+      <li><b>others: </b>{{geo?.land_use?.others}}</li>
+   </ul>
+<p><span class="mdl-layout-title">Irrigated land: </span>{{geo?.irrigated}}</p>
+<p><span class="mdl-layout-title">Population - distribution: </span>{{geo?.population}}</p>
+<p><span class="mdl-layout-title">Natural hazards: </span>{{geo?.hazards}}</p>
+<p><span class="mdl-layout-title">Environment - current issues: </span>{{geo?.environment}}</p>
+<p><span class="mdl-layout-title">Environment - international agreements: </span>
+   <ul>
+      <li><b>party to: </b>{{geo?.agreements?.party}}</li>
+      <li><b>signed, but not ratified: </b>{{geo?.agreements?.signed}}</li>
+   </ul>
+<p><span class="mdl-layout-title">Geography - note: </span>{{geo?.notes}}</p>

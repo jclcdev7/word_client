@@ -1,0 +1,15 @@
+<!-- verified 13-05-2018 -->
+<h4>Terrorism</h4>
+<div class="mdl-card__media" *ngIf="terror?.home.length > 0">
+   <div class="mdl-layout-title">Terrorist groups - home based:</div>
+</div>
+<div>
+   <p *ngFor="let p of terror?.home">{{p}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="terror?.foreign.length >0">
+   <div class="mdl-layout-title">Terrorist groups - foreign based:</div>
+</div>
+<div>
+   <p *ngFor="let p of terror?.foreign">{{p}}</p>
+</div>

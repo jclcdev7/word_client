@@ -1,0 +1,57 @@
+<div class="mdl-layout-title">Population:
+   <ul>
+      <li>{{people?.population?.total}}</li>
+      <li><b>country comparison to the world: </b>{{people?.population?.rank}}</li>
+   </ul>
+</div>
+<div class="mdl-layout-title">Nationality:
+   <ul>
+      <li>{{people?.population?.total}}</li>
+      <li><b>Noun: </b>{{people?.nationality?.noun}}</li>
+      <li><b>Adjective: </b>{{people?.nationality?.adjective}}</li>
+   </ul>
+</div>
+<div class="mdl-layout-title">Ethnic groups:
+   <ul>
+      <li>{{people?.ethnic?.group}}</li>
+      <li>notes: {{people?.ethnic?.note}}</li>
+   </ul>
+</div>
+<div class="mdl-layout-title">Languages:
+   <ul>
+      <li>{{people?.language?.lg}}</li>
+      <li>notes: {{people?.language?.notes}}</li>
+   </ul>
+</div>
+<div class="mdl-layout-title">Religions:
+   <ul>
+      <li>{{people?.religion}}</li>
+   </ul>
+</div>
+<div class="mdl-layout-title">Age structure:
+   <ul>
+      <li *ngFor="let p of people?.age">{{p.age}}: {{p.note}}</li>
+   </ul>
+</div>
+<div class="mdl-layout-title">Dependency ratios:
+   <ul>
+      <li>total dependency ratio: {{people?.dependency?.total}}</li>
+      <li>youth dependency ratio: {{people?.dependency?.youth}}</li>
+      <li>elderly dependency ratio: {{people?.dependency?.elderly}}</li>
+      <li>potential support ratio: {{people?.dependency?.support}}</li>
+   </ul>
+</div>
+<div class="mdl-layout-title">Median age:
+   <ul>
+      <li>Total: {{people?.median?.total}}</li>
+      <li>Male: {{people?.median?.male}}</li>
+      <li>Female: {{people?.median?.female}}</li>
+      <li>country comparison to the world: {{people?.median?.rank}}</li>
+   </ul>
+</div>
+<div class="mdl-layout-title">Population growth rate:
+   <ul>
+      <li>{{people?.growth?.rate}}</li>
+      <li>country comparison to the world: {{people?.growth?.rank}}</li>
+   </ul>
+</div>

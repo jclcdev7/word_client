@@ -1,0 +1,133 @@
+<!-- done on the 13-05-2018 -->
+<h4>Transportation</h4>
+
+<div class="mdl-card__media" *ngIf="transport?.air_trans?.carriers || transport?.air_trans?.aircraft_carriers ||
+transport?.air_trans?.passenger || transport?.air_trans?.freight">
+   <div class="mdl-layout-title">National air transport system:</div>
+</div>
+<div>
+   <p *ngIf="transport?.air_trans?.carriers">number of registered air carriers: {{transport?.air_trans?.carriers}}</p>
+   <p *ngIf="transport?.air_trans?.aircraft_carriers">inventory of registered aircraft operated by air carriers: {{transport?.air_trans?.aircraft_carriers}}</p>
+   <p *ngIf="transport?.air_trans?.passenger">annual passenger traffic on registered air carriers: {{transport?.air_trans?.passenger}}</p>
+   <p *ngIf="transport?.air_trans?.freight">annual freight traffic on registered air carriers: {{transport?.air_trans?.freight}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.country_code">
+   <div class="mdl-layout-title">Civil aircraft registration country code prefix:</div>
+</div>
+<div>
+   <p>{{transport?.country_code}} </p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.airports?.nb || transport?.airports?.rank">
+   <div class="mdl-layout-title">Airports:</div>
+</div>
+<div>
+   <p *ngIf="transport?.airports?.nb">{{transport?.airports?.nb}}</p>
+   <p *ngIf="transport?.airports?.rank">country comparison to the world: {{transport?.airports?.rank}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.airport_paved?.total || transport?.airport_paved?.cl1 ||
+transport?.airport_paved?.cl2 || transport?.airport_paved?.cl3 || transport?.airport_paved?.cl4 ||
+transport?.airport_paved?.cl5">
+   <div class="mdl-layout-title">Airports - with paved runways:</div>
+</div>
+<div>
+   <p *ngIf="transport?.airport_paved?.total">total: {{transport?.airport_paved?.total}}</p>
+   <p *ngIf="transport?.airport_paved?.cl1">over 3,047 m: {{transport?.airport_paved?.cl1}}</p>
+   <p *ngIf="transport?.airport_paved?.cl2">2,438 to 3,047 m: {{transport?.airport_paved?.cl2}}</p>
+   <p *ngIf="transport?.airport_paved?.cl3">1,524 to 2,437 m: {{transport?.airport_paved?.cl3}}</p>
+   <p *ngIf="transport?.airport_paved?.cl4">914 to 1,523 m: {{transport?.airport_paved?.cl4}}</p>
+   <p *ngIf="transport?.airport_paved?.cl5">under 914 m: {{transport?.airport_paved?.cl5}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.airport_unpaved?.total || transport?.airport_unpaved?.cl1 ||
+transport?.airport_unpaved?.cl2 || transport?.airport_unpaved?.cl3 || transport?.airport_unpaved?.cl4 ||
+transport?.airport_unpaved?.cl5">
+   <div class="mdl-layout-title">Airports - with unpaved runways:</div>
+</div>
+<div>
+   <p *ngIf="transport?.airport_unpaved?.total">total: {{transport?.airport_unpaved?.total}}</p>
+   <p *ngIf="transport?.airport_unpaved?.cl1">over 3,047 m: {{transport?.airport_unpaved?.cl1}}</p>
+   <p *ngIf="transport?.airport_unpaved?.cl2">2,438 to 3,047 m: {{transport?.airport_unpaved?.cl2}}</p>
+   <p *ngIf="transport?.airport_unpaved?.cl3">1,524 to 2,437 m: {{transport?.airport_unpaved?.cl3}}</p>
+   <p *ngIf="transport?.airport_unpaved?.cl4">914 to 1,523 m: {{transport?.airport_unpaved?.cl4}}</p>
+   <p *ngIf="transport?.airport_unpaved?.cl5">under 914 m: {{transport?.airport_unpaved?.cl5}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.heliport">
+   <div class="mdl-layout-title">Heliport:</div>
+</div>
+<div>
+   <p>{{transport?.heliport}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.pipeline">
+   <div class="mdl-layout-title">pipelines:</div>
+</div>
+<div>
+   <p>{{transport?.pipeline}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.railways?.total || transport?.railways?.broad ||
+transport?.railways?.standard || transport?.railways?.narrow || transport?.railways?.dual || transport?.railways?.rank">
+   <div class="mdl-layout-title">Railways:</div>
+</div>
+<div>
+   <p *ngIf="transport?.railways?.total">total: {{transport?.railways?.total}}</p>
+   <p *ngIf="transport?.railways?.broad">broad gauge: {{transport?.railways?.broad}}</p>
+   <p *ngIf="transport?.railways?.standard">standard gauge: {{transport?.railways?.standard}}</p>
+   <p *ngIf="transport?.railways?.narrow">narrow gauge: {{transport?.railways?.narrow}}</p>
+   <p *ngIf="transport?.railways?.dual">dual gauge: {{transport?.railways?.dual}}</p>
+   <p *ngIf="transport?.railways?.rank">country comparison to the world: {{transport?.railways?.rank}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.roadways?.total || transport?.roadways?.paved ||
+ transport?.roadways?.unpaved || transport?.roadways?.rank || transport?.roadways?.note">
+   <div class="mdl-layout-title">Roadways:</div>
+</div>
+<div>
+   <p *ngIf="transport?.roadways?.total">total: {{transport?.roadways?.total}}</p>
+   <p *ngIf="transport?.roadways?.paved">paved: {{transport?.roadways?.paved}}</p>
+   <p *ngIf="transport?.roadways?.unpaved">unpaved: {{transport?.roadways?.unpaved}}</p>
+   <p *ngIf="transport?.roadways?.rank">country comparison to the world: {{transport?.roadways?.rank}}</p>
+   <p *ngIf="transport?.roadways?.note">note: {{transport?.roadways?.note}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.waterways?.total || transport?.waterways?.rank">
+   <div class="mdl-layout-title">Waterways:</div>
+</div>
+<div>
+   <p *ngIf="transport?.waterways?.total">total: {{transport?.waterways?.total}}</p>
+   <p *ngIf="transport?.waterways?.rank">country comparison to the world: {{transport?.waterways?.rank}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.merch_marine?.total || transport?.merch_marine?.type || transport?.merch_marine?.rank">
+   <div class="mdl-layout-title">Merchant marine:</div>
+</div>
+<div>
+   <p *ngIf="transport?.merch_marine?.total">total: {{transport?.merch_marine?.total}}</p>
+   <p *ngIf="transport?.merch_marine?.type">ships by type: {{transport?.merch_marine?.type}}</p>
+   <p *ngIf="transport?.merch_marine?.rank">country comparison to the world: {{transport?.merch_marine?.rank}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="transport?.ports?.seaport || transport?.ports?.river_lake ||
+transport?.ports?.oil_term || transport?.ports?.dry_bulk || transport?.ports?.container ||
+transport?.ports?.lng || transport?.ports?.ferry">
+   <div class="mdl-layout-title">Ports and terminals:</div>
+</div>
+<div>
+   <p *ngIf="transport?.ports?.seaport">major seaport(s): {{transport?.ports?.seaport}}</p>
+   <p *ngIf="transport?.ports?.river_lake">river/lake port(s): {{transport?.ports?.river_lake}}</p>
+   <p *ngIf="transport?.ports?.oil_term">oil terminal(s): {{transport?.ports?.oil_term}}</p>
+   <p *ngIf="transport?.ports?.dry_bulk">dry bulk cargo port(s): {{transport?.ports?.dry_bulk}}</p>
+   <p *ngIf="transport?.ports?.container">container port(s): {{transport?.ports?.container}}</p>
+   <p *ngIf="transport?.ports?.lng">LNG terminal(s): {{transport?.ports?.lng}}</p>
+   <p *ngIf="transport?.ports?.ferry">cruise/ferry port(s): {{transport?.ports?.ferry}}</p>
+</div>
+<div class="mdl-card__media" *ngIf="transport?.notes">
+   <div class="mdl-layout-title">Transportation - note:</div>
+</div>
+<div>
+   {{transport?.notes}}
+</div>

@@ -1,0 +1,8 @@
+<!-- verified 13-05-2018 -->
+<h4>Introduction</h4>
+<div class="mdl-card__media" *ngIf="intro?.background">
+   <div class="mdl-layout-title">Background:</div>
+</div>
+<div>
+   <p *ngFor="let i of intro?.background">{{i}}</p>
+</div>
