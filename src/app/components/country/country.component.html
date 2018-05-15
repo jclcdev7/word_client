@@ -71,7 +71,7 @@
 </div>
 
 <div class="mdl-tabs__panel" id="comm-panel">
-   Communications
+   <country-comms [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-comms>
 </div>
 
 <div class="mdl-tabs__panel" id="trans-panel">

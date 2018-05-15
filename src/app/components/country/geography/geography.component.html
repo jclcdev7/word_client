@@ -1,51 +1,149 @@
-<p><span class="mdl-layout-title">Locations:</span>{{geo?.location}}</p>
-<p><span class="mdl-layout-title">Geographic coordinates: </span>{{geo?.coordinate}}</p>
-<p><span class="mdl-layout-title">Map references: </span>{{geo?.map}}</p>
-<p><span class="mdl-layout-title">Area: </span>
-   <ul>
-      <li><b>Total: </b>{{geo?.area?.total}}</li>
-      <li><b>Land: </b>{{geo?.area?.land}}</li>
-      <li><b>Water: </b>{{geo?.area?.water}}</li>
-      <li><b>country comparison to the world: </b>{{geo?.area?.position}}</li>
-   </ul>
-<p><span class="mdl-layout-title">Area - comparative: </span>{{geo?.area_com}}</p>
-<p><span class="mdl-layout-title">Land boundaries: </span>
-   <ul>
-      <li><b>Total: </b>{{geo?.boundaries?.total}}</li>
-      <li><b>border countries: </b>{{geo?.boundaries?.countries}}
-         <!--span *ngFor="let bound of geo?.boundaries?.countries">{{bound.ctry}} = {{bound.length}},</span-->
-      </li>
-   </ul>
-<p><span class="mdl-layout-title">Coastline: </span>{{geo?.coastlines}}</p>
-<p><span class="mdl-layout-title">Maritimes Claims: </span>{{geo?.claims}}</p>
-<p><span class="mdl-layout-title">Climate: </span>{{geo?.climate}}</p>
-<p><span class="mdl-layout-title">Terrain: </span>{{geo?.terrain}}</p>
-<p><span class="mdl-layout-title">Elevation: </span>
-   <ul>
-      <li><b>mean elevation: </b>{{geo?.elevation?.mean}}</li>
-      <li><b>elevation extremes: </b>
-         <ul>Lowest point: {{geo?.elevation?.extremes?.lowest}},
-         highest point: {{geo?.elevation?.extremes?.highest}}</ul>
-   </ul>
-<p><span class="mdl-layout-title">Natural resources: </span>
-   <span *ngFor="let res of geo?.resources">{{res}}, </span>
-</p>
-<p><span class="mdl-layout-title">Land use: </span>
-   <ul>
-      <li><b>agricultural land: </b>{{geo?.land_use?.agricultural}}</li>
-      <li>arable land: {{geo?.land_use?.arable}}</li>
-      <li>permanent crops: {{geo?.land_use?.crops}}</li>
-      <li>permanent pasture: {{geo?.land_use?.pasture}}</li>
-      <li><b>forest: </b>{{geo?.land_use?.forest}}</li>
-      <li><b>others: </b>{{geo?.land_use?.others}}</li>
-   </ul>
-<p><span class="mdl-layout-title">Irrigated land: </span>{{geo?.irrigated}}</p>
-<p><span class="mdl-layout-title">Population - distribution: </span>{{geo?.population}}</p>
-<p><span class="mdl-layout-title">Natural hazards: </span>{{geo?.hazards}}</p>
-<p><span class="mdl-layout-title">Environment - current issues: </span>{{geo?.environment}}</p>
-<p><span class="mdl-layout-title">Environment - international agreements: </span>
-   <ul>
-      <li><b>party to: </b>{{geo?.agreements?.party}}</li>
-      <li><b>signed, but not ratified: </b>{{geo?.agreements?.signed}}</li>
-   </ul>
-<p><span class="mdl-layout-title">Geography - note: </span>{{geo?.notes}}</p>
+<h4>Geography</h4>
+<div class="mdl-card__media" *ngIf="geo?.location">
+   <div class="mdl-layout-title">Locations:</div>
+</div>
+<div>
+  <p>{{geo?.location}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.coordinate">
+   <div class="mdl-layout-title">Geographic coordinates:</div>
+</div>
+<div>
+  <p>{{geo?.coordinate}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.map">
+   <div class="mdl-layout-title">Map references:</div>
+</div>
+<div>
+  <p>{{geo?.map}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.are?.total || geo?.area?.land || geo?.area?.water || geo?.area?.position">
+   <div class="mdl-layout-title">Area:</div>
+</div>
+<div>
+  <ul>
+     <li *ngIf="geo?.area?.total"><b>Total: </b>{{geo?.area?.total}}</li>
+     <li *ngIf="geo?.area?.land"><b>Land: </b>{{geo?.area?.land}}</li>
+     <li *ngIf="geo?.area?.water"><b>Water: </b>{{geo?.area?.water}}</li>
+     <li *ngIf="geo?.area?.position"><b>country comparison to the world: </b>{{geo?.area?.position}}</li>
+  </ul>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.area_com">
+   <div class="mdl-layout-title">Area - comparative:</div>
+</div>
+<div>
+  <p>{{geo?.area_com}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.boundaries?.total || geo?.boundaries?.countries">
+   <div class="mdl-layout-title">Land boundaries:</div>
+</div>
+<div>
+  <p *ngIf="geo?.boundaries?.total"><b>Total: </b>{{geo?.boundaries?.total}}</p>
+  <p *ngIf="geo?.boundaries?.countries"><b>border countries: </b>{{geo?.boundaries?.countries}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.coastlines">
+   <div class="mdl-layout-title">Coastline:</div>
+</div>
+<div>
+  <p>{{geo?.coastlines}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.claims">
+   <div class="mdl-layout-title">Maritime Claims:</div>
+</div>
+<div>
+  <p>{{geo?.claims}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.climate">
+   <div class="mdl-layout-title">Climate:</div>
+</div>
+<div>
+  <p>{{geo?.climate}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.terrain">
+   <div class="mdl-layout-title">Terrain:</div>
+</div>
+<div>
+  <p>{{geo?.terrain}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.elevation?.mean || geo?.elevation?.extremes?.lowest || geo?.elevation?.extremes?.highest">
+   <div class="mdl-layout-title">Elevation:</div>
+</div>
+<div>
+  <p *ngIf="geo?.elevation?.mean"><b>mean elevation: </b>{{geo?.elevation?.mean}}</p>
+  <p *ngIf="geo?.elevation?.extremes?.lowest || geo?.elevation?.extremes?.highest"><b>elevation extremes: </b></p>
+  <p *ngIf="geo?.elevation?.extremes?.lowest">Lowest point: {{geo?.elevation?.extremes?.lowest}}</p>
+  <p *ngIf="geo?.elevation?.extremes?.highest">highest point: {{geo?.elevation?.extremes?.highest}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.resources?.length >0">
+   <div class="mdl-layout-title">Natural resources:</div>
+</div>
+<div>
+  <p><span *ngFor="let res of geo?.resources">{{res}}, </span></p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.land_use?.agricultural || geo?.land_use?.arable || geo?.land_use?.crops ||
+  geo?.land_use?.pasture || geo?.land_use?.forest || geo?.land_use?.others">
+   <div class="mdl-layout-title">Land use:</div>
+</div>
+<div>
+  <p *ngIf="geo?.land_use?.agricultural"><b>agricultural land: </b>{{geo?.land_use?.agricultural}}</p>
+  <p *ngIf="geo?.land_use?.arable">arable land: {{geo?.land_use?.arable}}</p>
+  <p *ngIf="geo?.land_use?.crops">permanent crops: {{geo?.land_use?.crops}}</p>
+  <p *ngIf="geo?.land_use?.pasture">permanent pasture: {{geo?.land_use?.pasture}}</p>
+  <p *ngIf="geo?.land_use?.forest"><b>forest: </b>{{geo?.land_use?.forest}}</p>
+  <p *ngIf="geo?.land_use?.others"><b>others: </b>{{geo?.land_use?.others}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.irrigated">
+   <div class="mdl-layout-title">Irrigated land:</div>
+</div>
+<div>
+  <p>{{geo?.irrigated}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.population">
+   <div class="mdl-layout-title">Population - distribution:</div>
+</div>
+<div>
+  <p>{{geo?.population}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.hazards">
+   <div class="mdl-layout-title">Natural hazards:</div>
+</div>
+<div>
+  <p>{{geo?.hazards}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.environment">
+   <div class="mdl-layout-title">Environment - current issues:</div>
+</div>
+<div>
+  <p>{{geo?.environment}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.agreements?.party || geo?.agreements?.signed">
+   <div class="mdl-layout-title">Environment - international agreements:</div>
+</div>
+<div>
+  <p *ngIf="geo?.agreements?.party"><b>party to: </b>{{geo?.agreements?.party}}</p>
+  <p *ngIf="geo?.agreements?.signed"><b>signed, but not ratified: </b>{{geo?.agreements?.signed}}</p>
+</div>
+
+<div class="mdl-card__media" *ngIf="geo?.notes">
+   <div class="mdl-layout-title">Geography - note:</div>
+</div>
+<div>
+  <p>{{geo?.notes}}</p>
+</div>

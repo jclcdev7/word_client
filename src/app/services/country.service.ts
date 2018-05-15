@@ -37,6 +37,10 @@ getTerror(country) {
  return this.http.get<any>(service+'/world/detail?ctry='+country+'&det=terror');
 }
 
+getComms(country) {
+ return this.http.get<any>(service+'/world/detail?ctry='+country+'&det=comms');
+}
+
  getList() {
     return this.http.get<any>(service+'/worldCode');
 }

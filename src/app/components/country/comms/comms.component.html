@@ -1,0 +1,57 @@
+<h4>Communications</h4>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="mdl-cell mdl-cell--8-col">
+
+    <div class="mdl-card__media" *ngIf="comms?.tel_fix?.total || comms?.tel_fix?.sub_per100 || comms?.tel_fix?.rank">
+      <div class="mdl-layout-title">Telephone - fixed lines:</div>
+    </div>
+    <div>
+      <p *ngIf="comms?.tel_fix?.total">total: {{comms?.tel_fix?.total}}</p>
+      <p *ngIf="comms?.tel_fix?.sub_per100">subscriptions per 100 inhabitants: {{comms?.tel_fix?.sub_per100}}</p>
+      <p *ngIf="comms?.tel_fix?.rank">country comparison to the world: {{comms?.tel_fix?.rank}}</p>
+    </div>
+
+    <div class="mdl-card__media" *ngIf="comms?.tel_mob?.total || comms?.tel_mob?.sub_per100 || comms?.tel_mob?.rank">
+      <div class="mdl-layout-title">Telephone - mobile cellular:</div>
+    </div>
+    <div>
+      <p *ngIf="comms?.tel_mob?.total">total: {{comms?.tel_mob?.total}}</p>
+      <p *ngIf="comms?.tel_mob?.sub_per100">subscriptions per 100 inhabitants: {{comms?.tel_mob?.sub_per100}}</p>
+      <p *ngIf="comms?.tel_mob?.rank">country comparison to the world: {{comms?.tel_mob?.rank}}</p>
+    </div>
+
+    <div class="mdl-card__media" *ngIf="comms?.tel_sys?.general || comms?.tel_sys?.domestic || comms?.tel_sys?.internat">
+      <div class="mdl-layout-title">Telephone - mobile cellular:</div>
+    </div>
+    <div>
+      <p *ngIf="comms?.tel_sys?.general">general assessment: {{comms?.tel_sys?.general}}</p>
+      <p *ngIf="comms?.tel_sys?.domestic">domestic: {{comms?.tel_sys?.domestic}}</p>
+      <p *ngIf="comms?.tel_sys?.internat">international: {{comms?.tel_sys?.internat}}</p>
+    </div>
+
+    <div class="mdl-card__media" *ngIf="comms?.broadcast">
+      <div class="mdl-layout-title">Broadcast media:</div>
+    </div>
+    <div>
+      <p *ngIf="comms?.broadcast">{{comms?.broadcast}}</p>
+    </div>
+
+    <div class="mdl-card__media" *ngIf="comms?.internet">
+      <div class="mdl-layout-title">Internet country code:</div>
+    </div>
+    <div>
+      <p *ngIf="comms?.internet">{{comms?.internet}}</p>
+    </div>
+
+    <div class="mdl-card__media" *ngIf="comms?.int_user?.total || comms?.int_user?.percent || comms?.int_user?.rank">
+      <div class="mdl-layout-title">Internet users:</div>
+    </div>
+    <div>
+      <p *ngIf="comms?.int_user?.total">total: {{comms?.int_user?.total}}</p>
+      <p *ngIf="comms?.int_user?.percent">percent of population: {{comms?.int_user?.percent}}</p>
+      <p *ngIf="comms?.int_user?.rank">country comparison to the world: {{comms?.int_user?.rank}}</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--2-col"></div>
+  </div>

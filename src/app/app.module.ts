@@ -14,6 +14,7 @@ import { IssuesComponent } from './components/country/issues/issues.component';
 import { MilsecComponent } from './components/country/milsec/milsec.component';
 import { TransportComponent } from './components/country/transport/transport.component';
 import { TerrorComponent } from './components/country/terror/terror.component';
+import { CommsComponent } from './components/country/comms/comms.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { TerrorComponent } from './components/country/terror/terror.component';
     IssuesComponent,
     MilsecComponent,
     TransportComponent,
-    TerrorComponent
+    TerrorComponent,
+    CommsComponent
   ],
   imports: [
     BrowserModule,
