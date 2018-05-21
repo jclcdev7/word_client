@@ -1,5 +1,9 @@
 <!-- done on the 13-05-2018 -->
 <h4>Transportation</h4>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="mdl-cell mdl-cell--8-col">
+  <!-- Top Grid -->
 
 <div class="mdl-card__media" *ngIf="transport?.air_trans?.carriers || transport?.air_trans?.aircraft_carriers ||
 transport?.air_trans?.passenger || transport?.air_trans?.freight">
@@ -130,4 +134,8 @@ transport?.ports?.lng || transport?.ports?.ferry">
 </div>
 <div>
    {{transport?.notes}}
+</div>
+
+<!-- Bottom Grid -->
+<div class="mdl-cell mdl-cell--2-col"></div>
 </div>

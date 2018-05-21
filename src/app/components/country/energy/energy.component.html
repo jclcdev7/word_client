@@ -1,0 +1,201 @@
+<!-- verified 11-05-2018 -->
+<h4>Energy</h4>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="mdl-cell mdl-cell--8-col">
+  <!-- Top Grid -->
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_access !=''">
+     <div class="mdl-layout-title">Electricity - access:</div>
+  </div>
+  <div>
+     <p>electrification - total population: {{energy?.elec_access}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_prod?.total || energy?.elec_prod?.rank">
+     <div class="mdl-layout-title">Electricity - production:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.elec_prod?.total">{{energy?.elec_prod?.total}}</p>
+     <p *ngIf="energy?.elec_prod?.rank">country comparison to the world: {{energy?.elec_prod?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_cons?.total || energy?.elec_cons?.rank">
+     <div class="mdl-layout-title">Electricity - consumption:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.elec_cons?.total">{{energy?.elec_cons?.total}}</p>
+     <p *ngIf="energy?.elec_cons?.rank">country comparison to the world: {{energy?.elec_cons?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_exp?.total || energy?.elec_exp?.rank">
+     <div class="mdl-layout-title">Electricity - exports:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.elec_exp?.total">{{energy?.elec_exp?.total}}</p>
+     <p *ngIf="energy?.elec_exp?.rank">country comparison to the world: {{energy?.elec_exp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_imp?.total || energy?.elec_imp?.rank">
+     <div class="mdl-layout-title">Electricity - imports:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.elec_imp?.total">{{energy?.elec_imp?.total}}</p>
+     <p *ngIf="energy?.elec_imp?.rank">country comparison to the world: {{energy?.elec_imp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_gene?.total || energy?.elec_gene?.rank">
+     <div class="mdl-layout-title">Electricity - installed generating capacity:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.elec_gene?.total">{{energy?.elec_gene?.total}}</p>
+     <p *ngIf="energy?.elec_gene?.rank">country comparison to the world: {{energy?.elec_gene?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_fossil?.total || energy?.elec_fossil?.rank">
+     <div class="mdl-layout-title">Electricity - from fossil fuels:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.elec_fossil?.total">{{energy?.elec_fossil?.total}}</p>
+     <p *ngIf="energy?.elec_fossil?.rank">country comparison to the world: {{energy?.elec_fossil?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_nuclear?.total || energy?.elec_nuclear?.rank">
+     <div class="mdl-layout-title">Electricity - from nuclear fuels:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.elec_nuclear?.total">{{energy?.elec_nuclear?.total}}</p>
+     <p *ngIf="energy?.elec_nuclear?.rank">country comparison to the world: {{energy?.elec_nuclear?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_hydro?.total || energy?.elec_hydro?.rank">
+     <div class="mdl-layout-title">Electricity - from hydroelectric plants:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.elec_hydro?.total">{{energy?.elec_hydro?.total}}</p>
+     <p *ngIf="energy?.elec_hydro?.rank">country comparison to the world: {{energy?.elec_hydro?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.elec_other?.total || energy?.elec_other?.rank">
+     <div class="mdl-layout-title">Electricity - from other renewable sources:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.elec_other?.total">{{energy?.elec_other?.total}}</p>
+     <p *ngIf="energy?.elec_other?.rank">country comparison to the world: {{energy?.elec_other?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.crude_prod?.total || energy?.crude_prod?.rank">
+     <div class="mdl-layout-title">Crude oil - production:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.crude_prod?.total">{{energy?.crude_prod?.total}}</p>
+     <p *ngIf="energy?.crude_prod?.rank">country comparison to the world: {{energy?.crude_prod?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.crude_exp?.total || energy?.crude_exp?.rank">
+     <div class="mdl-layout-title">Crude oil - exports:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.crude_exp?.total">{{energy?.crude_exp?.total}}</p>
+     <p *ngIf="energy?.crude_exp?.rank">country comparison to the world: {{energy?.crude_exp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.crude_imp?.total || energy?.crude_imp?.rank">
+     <div class="mdl-layout-title">Crude oil - imports:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.crude_imp?.total">{{energy?.crude_imp?.total}}</p>
+     <p *ngIf="energy?.crude_imp?.rank">country comparison to the world: {{energy?.crude_imp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.crude_rsv?.total || energy?.crude_rsv?.rank">
+     <div class="mdl-layout-title">Crude oil - proved reserves:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.crude_rsv?.total">{{energy?.crude_rsv?.total}}</p>
+     <p *ngIf="energy?.crude_rsv?.rank">country comparison to the world: {{energy?.crude_rsv?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.refined_prod?.total || energy?.refined_prod?.rank">
+     <div class="mdl-layout-title">Refined petroleum products - production:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.refined_prod?.total">{{energy?.refined_prod?.total}}</p>
+     <p *ngIf="energy?.refined_prod?.rank">country comparison to the world: {{energy?.refined_prod?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.refined_cons?.total || energy?.refined_cons?.rank">
+     <div class="mdl-layout-title">Refined petroleum products - consumption:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.refined_cons?.total">{{energy?.refined_cons?.total}}</p>
+     <p *ngIf="energy?.refined_cons?.rank">country comparison to the world: {{energy?.refined_cons?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.refined_exp?.total || energy?.refined_exp?.rank">
+     <div class="mdl-layout-title">Refined petroleum products - exports:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.refined_exp?.total">{{energy?.refined_exp?.total}}</p>
+     <p *ngIf="energy?.refined_exp?.rank">country comparison to the world: {{energy?.refined_exp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.refined_imp?.total || energy?.refined_imp?.rank">
+     <div class="mdl-layout-title">Refined petroleum products - imports:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.refined_imp?.total">{{energy?.refined_imp?.total}}</p>
+     <p *ngIf="energy?.refined_imp?.rank">country comparison to the world: {{energy?.refined_imp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.gas_prod?.total || energy?.gas_prod?.rank">
+     <div class="mdl-layout-title">Natural gas - production:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.gas_prod?.total">{{energy?.gas_prod?.total}}</p>
+     <p *ngIf="energy?.gas_prod?.rank">country comparison to the world: {{energy?.gas_prod?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.gas_cons?.total || energy?.gas_cons?.rank">
+     <div class="mdl-layout-title">Natural gas - consumption:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.gas_cons?.total">{{energy?.gas_cons?.total}}</p>
+     <p *ngIf="energy?.gas_cons?.rank">country comparison to the world: {{energy?.gas_cons?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.gas_exp?.total || energy?.gas_exp?.rank">
+     <div class="mdl-layout-title">Natural gas - exports:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.gas_exp?.total">{{energy?.gas_exp?.total}}</p>
+     <p *ngIf="energy?.gas_exp?.rank">country comparison to the world: {{energy?.gas_exp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.gas_imp?.total || energy?.gas_imp?.rank">
+     <div class="mdl-layout-title">Natural gas - imports:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.gas_imp?.total">{{energy?.gas_imp?.total}}</p>
+     <p *ngIf="energy?.gas_imp?.rank">country comparison to the world: {{energy?.gas_imp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.gas_rsv?.total || energy?.gas_rsv?.rank">
+     <div class="mdl-layout-title">Natural gas - proved reserves:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.gas_rsv?.total">{{energy?.gas_rsv?.total}}</p>
+     <p *ngIf="energy?.gas_rsv?.rank">country comparison to the world: {{energy?.gas_rsv?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="energy?.emission?.total || energy?.emission?.rank">
+     <div class="mdl-layout-title">Carbon dioxide emissions from consumption of energy:</div>
+  </div>
+  <div>
+     <p *ngIf="energy?.emission?.total">{{energy?.emission?.total}}</p>
+     <p *ngIf="energy?.emission?.rank">country comparison to the world: {{energy?.emission?.rank}}</p>
+  </div>
+
+  <!-- Bottom Grid -->
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  </div>

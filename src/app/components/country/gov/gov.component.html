@@ -1,0 +1,176 @@
+<!-- verified 11-05-2018 -->
+<h4>Transnational Issues</h4>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="mdl-cell mdl-cell--8-col">
+  <!-- Top Grid -->
+
+  <div class="mdl-card__media" *ngIf="gov?.country_name?.conv_long || gov?.country_name?.conv_short || gov?.country_name?.loc_long
+        || gov?.country_name?.loc_short || gov?.country_name?.former || gov?.country_name?.abbrev || gov?.country_name?.etymology">
+     <div class="mdl-layout-title">Country name:</div>
+  </div>
+  <div>
+     <p *ngIf="gov?.country_name?.conv_long">conventional long form: {{gov?.country_name?.conv_long}}</p>
+     <p *ngIf="gov?.country_name?.conv_short">conventional short form: {{gov?.country_name?.conv_short}}</p>
+     <p *ngIf="gov?.country_name?.loc_long">local long form: {{gov?.country_name?.loc_long}}</p>
+     <p *ngIf="gov?.country_name?.loc_short">local short form: {{gov?.country_name?.loc_short}}</p>
+     <p *ngIf="gov?.country_name?.former">former: {{gov?.country_name?.former}}</p>
+     <p *ngIf="gov?.country_name?.abbrev">ab: {{gov?.abbreviation?.abbrev}}</p>
+     <p *ngIf="gov?.country_name?.etymology">etymology: {{gov?.country_name?.etymology}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.gov_type !=''">
+     <div class="mdl-layout-title">Government type:</div>
+  </div>
+  <div>
+     <p>{{gov?.gov_type}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.capital?.name || gov?.capital?.coordinates || gov?.capital?.timezone
+        || gov?.capital?.daylight">
+        <div class="mdl-layout-title">Capital:</div>
+  </div>
+  <div>
+     <p *ngIf="gov?.capital?.name">name: {{gov?.capital?.name}}</p>
+     <p *ngIf="gov?.capital?.coordinates">geographic coordinates: {{gov?.capital?.coordinates}}</p>
+     <p *ngIf="gov?.capital?.timezone">time difference: {{gov?.capital?.timezone}}</p>
+     <p *ngIf="gov?.capital?.daylight">daylight saving time: {{gov?.capital?.daylight}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.admin_div !=''">
+     <div class="mdl-layout-title">Administrative divisions:</div>
+  </div>
+  <div>
+     <p>{{gov?.admin_div}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.independence !=''">
+     <div class="mdl-layout-title">Independence:</div>
+  </div>
+  <div>
+     <p>{{gov?.independence}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.nat_hol !=''">
+     <div class="mdl-layout-title">National holiday:</div>
+  </div>
+  <div>
+     <p>{{gov?.nat_hol}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.constitution?.history || gov?.constitution?.amdt">
+     <div class="mdl-layout-title">Constitution:</div>
+  </div>
+  <div>
+     <p *ngIf="gov?.constitution?.history">history: {{gov?.constitution?.history}}</p>
+     <p *ngIf="gov?.constitution?.amdt">amendments: {{gov?.constitution?.amdt}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.legal">
+     <div class="mdl-layout-title">Legal system:</div>
+  </div>
+  <div>
+     <p>{{gov?.legal}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.int_law">
+     <div class="mdl-layout-title">International law organization participation:</div>
+  </div>
+  <div>
+     <p>{{gov?.int_law}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.citizen?.birth || gov?.citizen?.descent || gov?.citizen?.dual || gov?.citizen?.residency">
+     <div class="mdl-layout-title">Citizenship:</div>
+  </div>
+  <div>
+     <p *ngIf="gov?.citizen?.birth">citizenship by birth: {{gov?.citizen?.birth}}</p>
+     <p *ngIf="gov?.citizen?.descent">citizenship by descent only: {{gov?.citizen?.descent}}</p>
+     <p *ngIf="gov?.citizen?.dual">dual citizenship recognized: {{gov?.citizen?.dual}}</p>
+     <p *ngIf="gov?.citizen?.residency">residency requirement for naturalization: {{gov?.citizen?.residency}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.suffrage">
+     <div class="mdl-layout-title">Suffrage:</div>
+  </div>
+  <div>
+     <p>{{gov?.suffrage}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.executive?.cos || gov?.executive?.head_gov || gov?.executive?.cabinet
+      || gov?.executive?.residency || gov?.executive?.election">
+     <div class="mdl-layout-title">Executive branch:</div>
+  </div>
+  <div>
+     <p *ngIf="gov?.executive?.cos">chief of state: {{gov?.executive?.cos}}</p>
+     <p *ngIf="gov?.executive?.head_gov">head of government: {{gov?.executive?.head_gov}}</p>
+     <p *ngIf="gov?.executive?.dual">cabinet: {{gov?.executive?.dual}}</p>
+     <p *ngIf="gov?.executive?.cabinet">elections/appointments: {{gov?.executive?.cabinet}}</p>
+     <p *ngIf="gov?.executive?.election">election results: {{gov?.executive?.election}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.legislative?.description || gov?.legislative?.election || gov?.legislative?.result">
+     <div class="mdl-layout-title">Legislative branch:</div>
+  </div>
+  <div>
+     <p *ngIf="gov?.legislative?.description">description: {{gov?.legislative?.description}}</p>
+     <p *ngIf="gov?.legislative?.election">elections: {{gov?.legislative?.election}}</p>
+     <p *ngIf="gov?.legislative?.result">election results: {{gov?.legislative?.result}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.judicial?.high_court || gov?.judicial?.judge_sel || gov?.judicial?.sub_court">
+     <div class="mdl-layout-title">Legislative branch:</div>
+  </div>
+  <div>
+     <p *ngIf="gov?.judicial?.high_court">highest court(s): {{gov?.judicial?.high_court}}</p>
+     <p *ngIf="gov?.judicial?.judge_sel">judge selection and term of office: {{gov?.judicial?.judge_sel}}</p>
+     <p *ngIf="gov?.judicial?.sub_court">subordinate courts: {{gov?.judicial?.sub_court}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.parties?.length>0">
+     <div class="mdl-layout-title">Political parties and leaders:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of gov?.parties">{{p}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.pressure?.length>0">
+     <div class="mdl-layout-title">Political pressure groups and leaders:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of gov?.pressure">{{p}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.int_org">
+     <div class="mdl-layout-title">International organization participation:</div>
+  </div>
+  <div>
+     <p>{{gov?.int_org}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.flag">
+     <div class="mdl-layout-title">Flag description:</div>
+  </div>
+  <div>
+     <p>{{gov?.flag}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.symbol">
+     <div class="mdl-layout-title">National symbol(s):</div>
+  </div>
+  <div>
+     <p>{{gov?.symbol}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="gov?.anthem?.name || gov?.anthem?.lyr_mus || gov?.anthem?.note">
+     <div class="mdl-layout-title">National anthem:</div>
+  </div>
+  <div>
+     <p *ngIf="gov?.anthem?.name">name: {{gov?.anthem?.name}}</p>
+     <p *ngIf="gov?.anthem?.lyr_mus">lyrics/music: {{gov?.anthem?.lyr_mus}}</p>
+     <p *ngIf="gov?.anthem?.note">note: {{gov?.anthem?.note}}</p>
+  </div>
+
+  <!-- Bottom Grid -->
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  </div>

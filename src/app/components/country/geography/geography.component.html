@@ -1,4 +1,9 @@
 <h4>Geography</h4>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="mdl-cell mdl-cell--8-col">
+  <!-- Top Grid -->
+
 <div class="mdl-card__media" *ngIf="geo?.location">
    <div class="mdl-layout-title">Locations:</div>
 </div>
@@ -20,7 +25,7 @@
   <p>{{geo?.map}}</p>
 </div>
 
-<div class="mdl-card__media" *ngIf="geo?.are?.total || geo?.area?.land || geo?.area?.water || geo?.area?.position">
+<div class="mdl-card__media" *ngIf="geo?.are?.total || geo?.area?.land || geo?.area?.water || geo?.area?.position || geo?.area?.note">
    <div class="mdl-layout-title">Area:</div>
 </div>
 <div>
@@ -28,6 +33,7 @@
      <li *ngIf="geo?.area?.total"><b>Total: </b>{{geo?.area?.total}}</li>
      <li *ngIf="geo?.area?.land"><b>Land: </b>{{geo?.area?.land}}</li>
      <li *ngIf="geo?.area?.water"><b>Water: </b>{{geo?.area?.water}}</li>
+     <li *ngIf="geo?.area?.note"><b>Note: </b>{{geo?.area?.note}}</li>
      <li *ngIf="geo?.area?.position"><b>country comparison to the world: </b>{{geo?.area?.position}}</li>
   </ul>
 </div>
@@ -146,4 +152,8 @@
 </div>
 <div>
   <p>{{geo?.notes}}</p>
+</div>
+
+<!-- Bottom Grid -->
+<div class="mdl-cell mdl-cell--2-col"></div>
 </div>

@@ -8,6 +8,9 @@
          <option *ngFor="let item of maliste"  [ngValue]="item">{{item?.ENTITY}}</option>
       </select>
    </div>
+   <div>
+      <country-update [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-update>
+   </div>
 </div>
 
 <div class="mdl-cell mdl-cell--4-col">
@@ -59,15 +62,15 @@
  </div>
 
  <div class="mdl-tabs__panel" id="gov-panel">
-    Government
+    <country-gov [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-gov>
 </div>
 
 <div class="mdl-tabs__panel" id="eco-panel">
-   Economy
+   <country-economy [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-economy>
 </div>
 
 <div class="mdl-tabs__panel" id="energ-panel">
-   Energy
+   <country-energy [country]="mycountry?.GEC" *ngIf="mycountry?.ENTITY"></country-energy>
 </div>
 
 <div class="mdl-tabs__panel" id="comm-panel">

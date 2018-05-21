@@ -1,57 +1,332 @@
-<div class="mdl-layout-title">Population:
-   <ul>
-      <li>{{people?.population?.total}}</li>
-      <li><b>country comparison to the world: </b>{{people?.population?.rank}}</li>
-   </ul>
-</div>
-<div class="mdl-layout-title">Nationality:
-   <ul>
-      <li>{{people?.population?.total}}</li>
-      <li><b>Noun: </b>{{people?.nationality?.noun}}</li>
-      <li><b>Adjective: </b>{{people?.nationality?.adjective}}</li>
-   </ul>
-</div>
-<div class="mdl-layout-title">Ethnic groups:
-   <ul>
-      <li>{{people?.ethnic?.group}}</li>
-      <li>notes: {{people?.ethnic?.note}}</li>
-   </ul>
-</div>
-<div class="mdl-layout-title">Languages:
-   <ul>
-      <li>{{people?.language?.lg}}</li>
-      <li>notes: {{people?.language?.notes}}</li>
-   </ul>
-</div>
-<div class="mdl-layout-title">Religions:
-   <ul>
-      <li>{{people?.religion}}</li>
-   </ul>
-</div>
-<div class="mdl-layout-title">Age structure:
-   <ul>
-      <li *ngFor="let p of people?.age">{{p.age}}: {{p.note}}</li>
-   </ul>
-</div>
-<div class="mdl-layout-title">Dependency ratios:
-   <ul>
-      <li>total dependency ratio: {{people?.dependency?.total}}</li>
-      <li>youth dependency ratio: {{people?.dependency?.youth}}</li>
-      <li>elderly dependency ratio: {{people?.dependency?.elderly}}</li>
-      <li>potential support ratio: {{people?.dependency?.support}}</li>
-   </ul>
-</div>
-<div class="mdl-layout-title">Median age:
-   <ul>
-      <li>Total: {{people?.median?.total}}</li>
-      <li>Male: {{people?.median?.male}}</li>
-      <li>Female: {{people?.median?.female}}</li>
-      <li>country comparison to the world: {{people?.median?.rank}}</li>
-   </ul>
-</div>
-<div class="mdl-layout-title">Population growth rate:
-   <ul>
-      <li>{{people?.growth?.rate}}</li>
-      <li>country comparison to the world: {{people?.growth?.rank}}</li>
-   </ul>
-</div>
+<h4>People and Society</h4>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="mdl-cell mdl-cell--8-col">
+  <!-- Top Grid -->
+
+  <div class="mdl-card__media" *ngIf="people?.population?.total || people?.population?.rank">
+    <div class="mdl-layout-title">Population:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.population?.total">{{people?.population?.total}}</p>
+    <p *ngIf="people?.population?.rank"><b>country comparison to the world: </b>{{people?.population?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.nationality?.noun || people?.nationality?.adjective">
+    <div class="mdl-layout-title">Nationality:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.nationality?.noun">noun: {{people?.nationality?.noun}}</p>
+    <p *ngIf="people?.nationality?.adjective">adjective: {{people?.nationality?.adjective}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.ethnic?.group || people?.ethnic?.note.length>0">
+    <div class="mdl-layout-title">Nationality:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.ethnic?.group">{{people?.ethnic?.group}}</p>
+    <p *ngIf="people?.ethnic?.note.length>0">notes: {{people?.ethnic?.note}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.language?.lg || people?.language?.notes.length > 0">
+    <div class="mdl-layout-title">Languages:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.language?.lg">{{people?.language?.lg}}</p>
+    <p *ngIf="people?.language?.notes.length >0">notes: {{people?.language?.notes}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.religion">
+    <div class="mdl-layout-title">Religions:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.religion">{{people?.religion}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.age?.a14 || people?.age?.a24 || people?.age?.a54 || people?.age?.a64 || people?.age?.over">
+    <div class="mdl-layout-title">Age structure:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.age?.a14">0-14 years: {{people?.age?.a14}}</p>
+    <p *ngIf="people?.age?.a24">15-24 years: {{people?.age?.a24}}</p>
+    <p *ngIf="people?.age?.a54">25-54 years: {{people?.age?.a54}}</p>
+    <p *ngIf="people?.age?.a64">55-64 years: {{people?.age?.a64}}</p>
+    <p *ngIf="people?.age?.over">65 years and over: {{people?.age?.over}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.dependency?.total || people?.dependency?.youth || people?.dependency?.elderly || people?.dependency?.support">
+    <div class="mdl-layout-title">Dependency ratios:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.dependency?.total">total dependency ratio: {{people?.dependency?.total}}</p>
+    <p *ngIf="people?.dependency?.youth">youth dependency ratio: {{people?.dependency?.youth}}</p>
+    <p *ngIf="people?.dependency?.elderly">elderly dependency ratio: {{people?.dependency?.elderly}}</p>
+    <p *ngIf="people?.dependency?.support">potential support ratio: {{people?.dependency?.support}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.median?.total || people?.median?.male || people?.median?.female || people?.median?.rank">
+    <div class="mdl-layout-title">Median age:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.median?.total">total dependency ratio: {{people?.median?.total}}</p>
+    <p *ngIf="people?.median?.male">male: {{people?.median?.male}}</p>
+    <p *ngIf="people?.median?.female">female: {{people?.median?.female}}</p>
+    <p *ngIf="people?.median?.rank">country comparison to the world: {{people?.median?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.growth?.rate || people?.growth?.rank">
+    <div class="mdl-layout-title">Population growth rate:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.growth?.rate">{{people?.growth?.rate}}</p>
+    <p *ngIf="people?.growth?.rank">country comparison to the world: {{people?.growth?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.birth?.rate || people?.birth?.rank">
+    <div class="mdl-layout-title">Birth rate:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.birth?.rate">{{people?.birth?.rate}}</p>
+    <p *ngIf="people?.birth?.rank">country comparison to the world: {{people?.birth?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.death?.rate || people?.death?.rank">
+    <div class="mdl-layout-title">Death rate:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.death?.rate">{{people?.death?.rate}}</p>
+    <p *ngIf="people?.death?.rank">country comparison to the world: {{people?.death?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.migration?.rate || people?.migration?.rank">
+    <div class="mdl-layout-title">Net migration rate:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.migration?.rate">{{people?.migration?.rate}}</p>
+    <p *ngIf="people?.migration?.rank">country comparison to the world: {{people?.migration?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.distribution">
+    <div class="mdl-layout-title">Population distribtutions:</div>
+  </div>
+  <div>
+    <p>{{people?.distribution}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.urbanization?.urban || people?.urbanization?.rate">
+    <div class="mdl-layout-title">Urbanization:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.urbanization?.urban">urban population: {{people?.urbanization?.urban}}</p>
+    <p *ngIf="people?.urbanization?.rate">rate of urbanization: {{people?.urbanization?.rate}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.urban_areas">
+    <div class="mdl-layout-title">Major urban areas - population:</div>
+  </div>
+  <div>
+    <p>{{people?.urban_areas}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.sex?.birth || people?.sex?.a14 || people?.sex?.a24 || people?.sex?.a54 || people?.sex?.a64 || people?.sex?.over
+     || people?.sex?.total">
+    <div class="mdl-layout-title">Sex ratio:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.sex?.birth">at birth: {{people?.sex?.birth}}</p>
+    <p *ngIf="people?.sex?.a14">0-14 years: {{people?.sex?.a14}}</p>
+    <p *ngIf="people?.sex?.a24">15-24 years: {{people?.sex?.a24}}</p>
+    <p *ngIf="people?.sex?.a54">25-54 years: {{people?.sex?.a54}}</p>
+    <p *ngIf="people?.sex?.a64">55-64 years: {{people?.sex?.a64}}</p>
+    <p *ngIf="people?.sex?.over">65 years and over: {{people?.sex?.over}}</p>
+    <p *ngIf="people?.sex?.total">total population: {{people?.sex?.total}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.mother_first_birth">
+    <div class="mdl-layout-title">Mother's mean age at first birth:</div>
+  </div>
+  <div>
+    <p>{{people?.mother_first_birth}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.mother_death?.rate || people?.mother_death?.rank">
+    <div class="mdl-layout-title">Maternal mortality ratio:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.mother_death?.rate">{{people?.mother_death?.rate}}</p>
+    <p *ngIf="people?.mother_death?.rank">country comparison to the world: {{people?.mother_death?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.infant_death?.total || people?.infant_death?.male || people?.infant_death?.female || people?.infant_death?.rank">
+    <div class="mdl-layout-title">Infant mortality rate:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.infant_death?.total">total: {{people?.infant_death?.total}}</p>
+    <p *ngIf="people?.infant_death?.male">male: {{people?.infant_death?.male}}</p>
+    <p *ngIf="people?.infant_death?.female">female: {{people?.infant_death?.female}}</p>
+    <p *ngIf="people?.infant_death?.rank">country comparison to the world: {{people?.infant_death?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.life_birth?.total || people?.life_birth?.male || people?.life_birth?.female || people?.life_birth?.rank">
+    <div class="mdl-layout-title">Life expectancy at birth:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.life_birth?.total">total: {{people?.life_birth?.total}}</p>
+    <p *ngIf="people?.life_birth?.male">male: {{people?.life_birth?.male}}</p>
+    <p *ngIf="people?.life_birth?.female">female: {{people?.life_birth?.female}}</p>
+    <p *ngIf="people?.life_birth?.rank">country comparison to the world: {{people?.life_birth?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.fertility?.rate || people?.fertility?.rank">
+    <div class="mdl-layout-title">Total fertility rate:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.fertility?.rate">{{people?.fertility?.rate}}</p>
+    <p *ngIf="people?.fertility?.rank">country comparison to the world: {{people?.fertility?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.contraceptive">
+    <div class="mdl-layout-title">Contraceptive prevalence rate:</div>
+  </div>
+  <div>
+    <p>{{people?.contraceptive}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.health_exp?.rate || people?.health_exp?.rank">
+    <div class="mdl-layout-title">Health expenditure:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.health_exp?.rate">{{people?.health_exp?.rate}}</p>
+    <p *ngIf="people?.health_exp?.rank">country comparison to the world: {{people?.health_exp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.physicians">
+    <div class="mdl-layout-title">Physicians density:</div>
+  </div>
+  <div>
+    <p>{{people?.physicians}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.hospital">
+    <div class="mdl-layout-title">Hospital bed density:</div>
+  </div>
+  <div>
+    <p>{{people?.hospital}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.drink_water?.imp?.urban || people?.drink_water?.imp?.rural || people?.drink_water?.imp?.total ||
+       people?.drink_water?.unimp?.urban || people?.drink_water?.unimp?.rural || people?.drink_water?.unimp?.total">
+    <div class="mdl-layout-title">Drinking water source:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.drink_water?.imp?.urban || people?.drink_water?.imp?.rural || people?.drink_water?.imp?.total"><b>Improved:</b>
+    <p *ngIf="people?.drink_water?.imp?.urban">urban: {{people?.drink_water?.imp?.urban}}</p>
+    <p *ngIf="people?.drink_water?.imp?.rural">rural: {{people?.drink_water?.imp?.rural}}</p>
+    <p *ngIf="people?.drink_water?.imp?.total">total: {{people?.drink_water?.imp?.total}}</p>
+    <p *ngIf="people?.drink_water?.unimp?.urban || people?.drink_water?.unimp?.rural || people?.drink_water?.unimp?.total"><b>Unimproved:</b>
+    <p *ngIf="people?.drink_water?.unimp?.urban">urban: {{people?.drink_water?.unimp?.urban}}</p>
+    <p *ngIf="people?.drink_water?.unimp?.rural">rural: {{people?.drink_water?.unimp?.rural}}</p>
+    <p *ngIf="people?.drink_water?.unimp?.total">total: {{people?.drink_water?.unimp?.total}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.sanitation?.imp?.urban || people?.sanitation?.imp?.rural || people?.sanitation?.imp?.total ||
+       people?.sanitation?.unimp?.urban || people?.sanitation?.unimp?.rural || people?.sanitation?.unimp?.total">
+    <div class="mdl-layout-title">Sanitation facility access:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.sanitation?.imp?.urban || people?.sanitation?.imp?.rural || people?.sanitation?.imp?.total"><b>Improved:</b>
+    <p *ngIf="people?.sanitation?.imp?.urban">urban: {{people?.sanitation?.imp?.urban}}</p>
+    <p *ngIf="people?.sanitation?.imp?.rural">rural: {{people?.sanitation?.imp?.rural}}</p>
+    <p *ngIf="people?.sanitation?.imp?.total">total: {{people?.sanitation?.imp?.total}}</p>
+    <p *ngIf="people?.sanitation?.unimp?.urban || people?.sanitation?.unimp?.rural || people?.sanitation?.unimp?.total"><b>Unimproved:</b>
+    <p *ngIf="people?.sanitation?.unimp?.urban">urban: {{people?.sanitation?.unimp?.urban}}</p>
+    <p *ngIf="people?.sanitation?.unimp?.rural">rural: {{people?.sanitation?.unimp?.rural}}</p>
+    <p *ngIf="people?.sanitation?.unimp?.total">total: {{people?.sanitation?.unimp?.total}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.hiv_prevalence?.rate || people?.hiv_prevalence?.rank">
+    <div class="mdl-layout-title">HIV/AIDS - adult prevalence rate:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.hiv_prevalence?.rate">{{people?.hiv_prevalence?.rate}}</p>
+    <p *ngIf="people?.hiv_prevalence?.rank">country comparison to the world: {{people?.hiv_prevalence?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.hiv_living?.rate || people?.hiv_living?.rank">
+    <div class="mdl-layout-title">HIV/AIDS - people living with HIV/AIDS:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.hiv_living?.rate">{{people?.hiv_living?.rate}}</p>
+    <p *ngIf="people?.hiv_living?.rank">country comparison to the world: {{people?.hiv_living?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.hiv_death">
+    <div class="mdl-layout-title">HIV/AIDS - deaths:</div>
+  </div>
+  <div>
+    <p>{{people?.hiv_death}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.obesity?.rate || people?.obesity?.rank">
+    <div class="mdl-layout-title">Obesity - adult prevalence rate:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.obesity?.rate">{{people?.obesity?.rate}}</p>
+    <p *ngIf="people?.obesity?.rank">country comparison to the world: {{people?.obesity?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.underweight?.rate || people?.underweight?.rank">
+    <div class="mdl-layout-title">Children unde the age of 5 years underweight:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.underweight?.rate">{{people?.underweight?.rate}}</p>
+    <p *ngIf="people?.underweight?.rank">country comparison to the world: {{people?.underweight?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.educ_exp?.rate || people?.educ_exp?.rank">
+    <div class="mdl-layout-title">Education expenditures:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.educ_exp?.rate">{{people?.educ_exp?.rate}}</p>
+    <p *ngIf="people?.educ_exp?.rank">country comparison to the world: {{people?.educ_exp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.literacy?.total || people?.literacy?.male || people?.literacy?.female || people?.literacy?.def">
+    <div class="mdl-layout-title">Literacy:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.literacy?.def">definition: {{people?.literacy?.def}}</p>
+    <p *ngIf="people?.literacy?.total">total: {{people?.literacy?.total}}</p>
+    <p *ngIf="people?.literacy?.male">male: {{people?.literacy?.male}}</p>
+    <p *ngIf="people?.literacy?.female">female: {{people?.literacy?.female}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.school?.male || people?.school?.female || people?.school?.def">
+    <div class="mdl-layout-title">School life expectancy (primary to tertiary education):</div>
+  </div>
+  <div>
+    <p *ngIf="people?.school?.total">total: {{people?.school?.total}}</p>
+    <p *ngIf="people?.school?.male">male: {{people?.school?.male}}</p>
+    <p *ngIf="people?.school?.female">female: {{people?.school?.female}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.unemploy?.total || people?.unemploy?.male || people?.unemploy?.female || people?.unemploy?.rank">
+    <div class="mdl-layout-title">Unemployment, youth ages 15-24:</div>
+  </div>
+  <div>
+    <p *ngIf="people?.unemploy?.total">total: {{people?.unemploy?.total}}</p>
+    <p *ngIf="people?.unemploy?.male">male: {{people?.unemploy?.male}}</p>
+    <p *ngIf="people?.unemploy?.female">female: {{people?.unemploy?.female}}</p>
+    <p *ngIf="people?.unemploy?.rank">country comparison to the world: {{people?.unemploy?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media" *ngIf="people?.people_note">
+    <div class="mdl-layout-title">People - note:</div>
+  </div>
+  <div>
+    <p>{{people?.people_note}}</p>
+  </div>
+
+    <!-- Bottom Grid -->
+    <div class="mdl-cell mdl-cell--2-col"></div>
+  </div>

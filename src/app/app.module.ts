@@ -15,6 +15,11 @@ import { MilsecComponent } from './components/country/milsec/milsec.component';
 import { TransportComponent } from './components/country/transport/transport.component';
 import { TerrorComponent } from './components/country/terror/terror.component';
 import { CommsComponent } from './components/country/comms/comms.component';
+import { EnergyComponent } from './components/country/energy/energy.component';
+import { GovComponent } from './components/country/gov/gov.component';
+import { EconomyComponent } from './components/country/economy/economy.component';
+import { AppRoutes } from './app.routes';
+import { UpdateComponent } from './components/country/update/update.component';
 
 
 @NgModule({
@@ -29,12 +34,17 @@ import { CommsComponent } from './components/country/comms/comms.component';
     MilsecComponent,
     TransportComponent,
     TerrorComponent,
-    CommsComponent
+    CommsComponent,
+    EnergyComponent,
+    GovComponent,
+    EconomyComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutes
   ],
   providers: [CountriesService, CountryService],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import {Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { CountryService } from '../../../services/country.service';
 
 @Component({

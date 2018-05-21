@@ -13,6 +13,10 @@ export class CountryService {
     return this.http.get<any>(service+'/world/detail?ctry='+country+'&det=introduction');
   }
 
+  getUpdate(country) {
+    return this.http.get<any>(service+'/world/detail?ctry='+country+'&det=update');
+  }
+
   getGeography(country) {
    return this.http.get<any>(service+'/world/detail?ctry='+country+'&det=geography');
  }
@@ -39,6 +43,18 @@ getTerror(country) {
 
 getComms(country) {
  return this.http.get<any>(service+'/world/detail?ctry='+country+'&det=comms');
+}
+
+getEnergy(country) {
+ return this.http.get<any>(service+'/world/detail?ctry='+country+'&det=energy');
+}
+
+getGov(country) {
+ return this.http.get<any>(service+'/world/detail?ctry='+country+'&det=government');
+}
+
+getEconomy(country) {
+ return this.http.get<any>(service+'/world/detail?ctry='+country+'&det=economy');
 }
 
  getList() {

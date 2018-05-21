@@ -1,0 +1,339 @@
+<h4>Economy</h4>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="mdl-cell mdl-cell--8-col">
+  <!-- Top Grid -->
+
+  <div class="mdl-card__media"  *ngIf="economy?.overview">
+     <div class="mdl-layout-title">Economy - overview:</div>
+  </div>
+  <div>
+     <p>{{economy?.overview}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.gdp?.gdp_histo?.length>0 || economy?.gdp?.note || economy?.gdp?.rank">
+     <div class="mdl-layout-title">GDP (purchasing power parity):</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.gdp?.gdp_histo">{{p}}</p>
+     <p *ngIf="economy?.gdp?.note">note: {{economy?.gdp?.note}}</p>
+     <p *ngIf="economy?.gdp?.rank">country comparison to the world: {{economy?.gdp?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.gdp_exch?.gdp_histo?.length>0 || economy?.gdp_exch?.note || economy?.gdp_exch?.rank">
+     <div class="mdl-layout-title">GDP (official exchange rate):</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.gdp_exch?.gdp_histo">{{p}}</p>
+     <p *ngIf="economy?.gdp_exch?.note">note: {{economy?.gdp_exch?.note}}</p>
+     <p *ngIf="economy?.gdp_exch?.rank">country comparison to the world: {{economy?.gdp_exch?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.gdp_growth?.gdp_histo?.length>0 || economy?.gdp_growth?.note || economy?.gdp_growth?.rank">
+     <div class="mdl-layout-title">GDP - real growth rate:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.gdp_growth?.gdp_histo">{{p}}</p>
+     <p *ngIf="economy?.gdp_growth?.note">note: {{economy?.gdp_growth?.note}}</p>
+     <p *ngIf="economy?.gdp_growth?.rank">country comparison to the world: {{economy?.gdp_growth?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.gdp_capita?.length>0 || economy?.gdp_capita?.note || economy?.gdp_capita?.rank">
+     <div class="mdl-layout-title">GDP - per capita (PPP):</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.gdp_capita?.gdp_histo">{{p}}</p>
+     <p *ngIf="economy?.gdp_capita?.note">note: {{economy?.gdp_capita?.note}}</p>
+     <p *ngIf="economy?.gdp_capita?.rank">country comparison to the world: {{economy?.gdp_capita?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.gdp_gross_sav?.length>0 || economy?.gdp_gross_sav?.note || economy?.gdp_gross_sav?.rank">
+     <div class="mdl-layout-title">Gross national saving:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.gdp_capita?.gdp_histo">{{p}}</p>
+     <p *ngIf="economy?.gdp_gross_sav?.note">note: {{economy?.gdp_gross_sav?.note}}</p>
+     <p *ngIf="economy?.gdp_gross_sav?.rank">country comparison to the world: {{economy?.gdp_gross_sav?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.gdp_compo?.house || economy?.gdp_compo?.gov || economy?.gdp_compo?.inv_cap ||
+      economy?.gdp_compo?.inv_invent || economy?.gdp_compo?.export || economy?.gdp_compo?.import">
+     <div class="mdl-layout-title">GDP - composition, by sector of origin:</div>
+  </div>
+  <div>
+     <p *ngIf="economy?.gdp_compo?.house">household consumption: {{economy?.gdp_compo?.house}}</p>
+     <p *ngIf="economy?.gdp_compo?.gov">government consumption: {{economy?.gdp_compo?.gov}}</p>
+     <p *ngIf="economy?.gdp_compo?.inv_cap">investment in fixed capital: {{economy?.gdp_compo?.inv_cap}}</p>
+     <p *ngIf="economy?.gdp_compo?.inv_invent">investment in inventories: {{economy?.inv_invent?.inv_cap}}</p>
+     <p *ngIf="economy?.gdp_compo?.export">exports of goods and services: {{economy?.gdp_compo?.export}}</p>
+     <p *ngIf="economy?.gdp_compo?.import">imports of goods and services: {{economy?.gdp_compo?.import}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.gdp_compo_sect?.agri || economy?.gdp_compo_sect?.indus || economy?.gdp_compo_sect?.service">
+     <div class="mdl-layout-title">GDP - composition by sector of origin:</div>
+  </div>
+  <div>
+     <p *ngIf="economy?.gdp_compo_sect?.agri">agriculture: {{economy?.gdp_compo_sect?.agri}}</p>
+     <p *ngIf="economy?.gdp_compo_sect?.indus">industry: {{economy?.gdp_compo_sect?.indus}}</p>
+     <p *ngIf="economy?.gdp_compo_sect?.service">services: {{economy?.gdp_compo_sect?.service}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.agriculture">
+     <div class="mdl-layout-title">Agriculture - products:</div>
+  </div>
+  <div>
+     <p>{{economy?.agriculture}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.industries">
+     <div class="mdl-layout-title">Industries:</div>
+  </div>
+  <div>
+     <p>{{economy?.industries}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.indus_prod?.rate || economy?.indus_prod?.rank">
+     <div class="mdl-layout-title">Industrial production growth rate:</div>
+  </div>
+  <div>
+     <p *ngIf="economy?.indus_prod?.rate">{{economy?.indus_prod?.rate}}</p>
+     <p *ngIf="economy?.indus_prod?.rank">country comparison to the world: {{economy?.indus_prod?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.labor?.rate || economy?.labor?.rank">
+     <div class="mdl-layout-title">Labor force:</div>
+  </div>
+  <div>
+     <p *ngIf="economy?.labor?.rate">{{economy?.labor?.rate}}</p>
+     <p *ngIf="economy?.labor?.rank">country comparison to the world: {{economy?.labor?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.labor_occup?.agri || economy?.labor_occup?.indus || economy?.labor_occup?.service">
+     <div class="mdl-layout-title">Labor force - by occupation:</div>
+  </div>
+  <div>
+     <p *ngIf="economy?.labor_occup?.agri">agriculture: {{economy?.labor_occup?.agri}}</p>
+     <p *ngIf="economy?.labor_occup?.indus">industry: {{economy?.labor_occup?.indus}}</p>
+     <p *ngIf="economy?.labor_occup?.service">services: {{economy?.labor_occup?.service}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.unemploy?.histo?.length>0 || economy?.unemploy?.note || economy?.unemploy?.rank">
+     <div class="mdl-layout-title">Unemployment rate:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.unemploy?.histo">{{p}}</p>
+     <p *ngIf="economy?.unemploy?.note">note: {{economy?.unemploy?.note}}</p>
+     <p *ngIf="economy?.unemploy?.rank">country comparison to the world: {{economy?.unemploy?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.poverty_line">
+     <div class="mdl-layout-title">population below poverty line:</div>
+  </div>
+  <div>
+     <p>{{economy?.poverty_line}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.house_income?.lowest || economy?.house_income?.highest">
+     <div class="mdl-layout-title">Household income or consumption by percentage share:</div>
+  </div>
+  <div>
+     <p *ngIf="economy?.house_income?.lowest">lowest: {{economy?.house_income?.lowest}}</p>
+     <p *ngIf="economy?.house_income?.highest">highest: {{economy?.house_income?.highest}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.gini_idx?.histo?.length>0 || economy?.gini_idx?.rank">
+     <div class="mdl-layout-title">Distribution of family income - Gini index:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.gini_idx?.histo">{{p}}</p>
+     <p *ngIf="economy?.gini_idx?.rank">country comparison to the world: {{economy?.gini_idx?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.budget?.revenues || economy?.budget?.expenditures">
+     <div class="mdl-layout-title">Budget:</div>
+  </div>
+  <div>
+     <p *ngIf="economy?.budget?.revenues">revenues: {{economy?.budget?.revenues}}</p>
+     <p *ngIf="economy?.budget?.expenditures">expenditures: {{economy?.budget?.expenditures}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.taxes?.income || economy?.taxes?.rank">
+     <div class="mdl-layout-title">Taxes and other revenues:</div>
+  </div>
+  <div>
+     <p *ngIf="economy?.taxes?.income">income: {{economy?.taxes?.income}}</p>
+     <p *ngIf="economy?.taxes?.rank">country comparison to the world: {{economy?.taxes?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.budget_bal?.bal || economy?.budget_bal?.rank">
+     <div class="mdl-layout-title">Budget surplus (+) or deficit (-):</div>
+  </div>
+  <div>
+     <p *ngIf="economy?.budget_bal?.bal">{{economy?.budget_bal?.bal}}</p>
+     <p *ngIf="economy?.budget_bal?.rank">country comparison to the world: {{economy?.budget_bal?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.pub_debt?.histo?.length>0 || economy?.pub_debt?.rank">
+     <div class="mdl-layout-title">Public debts:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.pub_debt?.histo">{{p}}</p>
+     <p *ngIf="economy?.pub_debt?.rank">country comparison to the world: {{economy?.pub_debt?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.fiscal">
+     <div class="mdl-layout-title">Fiscal year:</div>
+  </div>
+  <div>
+     <p>{{economy?.fiscal}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.inflation?.histo?.length>0 || economy?.inflation?.rank">
+     <div class="mdl-layout-title">Inflate rate (consumer prices):</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.inflation?.histo">{{p}}</p>
+     <p *ngIf="economy?.inflation?.rank">country comparison to the world: {{economy?.inflation?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.cent_bank?.histo?.length>0 || economy?.cent_bank?.rank">
+     <div class="mdl-layout-title">Central bank discount rate:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.cent_bank?.histo">{{p}}</p>
+     <p *ngIf="economy?.cent_bank?.rank">country comparison to the world: {{economy?.cent_bank?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.comerc_bank?.histo?.length>0 || economy?.comerc_bank?.rank">
+     <div class="mdl-layout-title">Commercial bank prime lending rate:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.comerc_bank?.histo">{{p}}</p>
+     <p *ngIf="economy?.comerc_bank?.rank">country comparison to the world: {{economy?.comerc_bank?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.stock_narrow?.histo?.length>0 || economy?.stock_narrow?.rank">
+     <div class="mdl-layout-title">Stock of narrow money:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.stock_narrow?.histo">{{p}}</p>
+     <p *ngIf="economy?.stock_narrow?.rank">country comparison to the world: {{economy?.stock_narrow?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.stock_broad?.histo?.length>0 || economy?.stock_broad?.rank">
+     <div class="mdl-layout-title">Stock of broad money:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.stock_broad?.histo">{{p}}</p>
+     <p *ngIf="economy?.stock_broad?.rank">country comparison to the world: {{economy?.stock_broad?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.stock_dom?.histo?.length>0 || economy?.stock_dom?.rank">
+     <div class="mdl-layout-title">Stock of domestic credit:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.stock_dom?.histo">{{p}}</p>
+     <p *ngIf="economy?.stock_dom?.rank">country comparison to the world: {{economy?.stock_dom?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.market_val">
+     <div class="mdl-layout-title">Market value of publicly traded shares:</div>
+  </div>
+  <div>
+     <p>{{economy?.market_val}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.curr_bal?.histo?.length>0 || economy?.curr_bal?.rank">
+     <div class="mdl-layout-title">Current account balance:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.curr_bal?.histo">{{p}}</p>
+     <p *ngIf="economy?.curr_bal?.rank">country comparison to the world: {{economy?.curr_bal?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.exports?.histo?.length>0 || economy?.exports?.rank">
+     <div class="mdl-layout-title">Exports:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.exports?.histo">{{p}}</p>
+     <p *ngIf="economy?.exports?.rank">country comparison to the world: {{economy?.exports?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.export_com">
+     <div class="mdl-layout-title">Exports - commodities:</div>
+  </div>
+  <div>
+     <p>{{economy?.export_com}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.export_partner">
+     <div class="mdl-layout-title">Exports - partners:</div>
+  </div>
+  <div>
+     <p>{{economy?.export_partner}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.imports?.histo?.length>0 || economy?.imports?.rank">
+     <div class="mdl-layout-title">Imports:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.imports?.histo">{{p}}</p>
+     <p *ngIf="economy?.imports?.rank">country comparison to the world: {{economy?.imports?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.import_com">
+     <div class="mdl-layout-title">Imports - commodities:</div>
+  </div>
+  <div>
+     <p>{{economy?.import_com}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.import_partner">
+     <div class="mdl-layout-title">imports - partners:</div>
+  </div>
+  <div>
+     <p>{{economy?.import_partner}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.reserve?.histo?.length>0 || economy?.reserve?.rank">
+     <div class="mdl-layout-title">Reserves of foreign exchange and gold:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.reserve?.histo">{{p}}</p>
+     <p *ngIf="economy?.reserve?.rank">country comparison to the world: {{economy?.reserve?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.debt_ext?.histo?.length>0 || economy?.debt_ext?.rank">
+     <div class="mdl-layout-title">Debt - external:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.debt_ext?.histo">{{p}}</p>
+     <p *ngIf="economy?.debt_ext?.rank">country comparison to the world: {{economy?.debt_ext?.rank}}</p>
+  </div>
+
+  <div class="mdl-card__media"  *ngIf="economy?.foreign_invest?.histo?.length>0 || economy?.foreign_invest?.rank">
+     <div class="mdl-layout-title">Stock of direct foreign investment - at home:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.foreign_invest?.histo">{{p}}</p>
+     <p *ngIf="economy?.foreign_invest?.rank">country comparison to the world: {{economy?.foreign_invest?.rank}}</p>
+  </div>
+
+  <!--div class="mdl-card__media"  *ngIf="economy?.foreign_invest?.histo?.length>0 || economy?.foreign_invest?.rank">
+     <div class="mdl-layout-title">Stock of direct foreign investment - at home:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.foreign_invest?.histo">{{p}}</p>
+     <p *ngIf="economy?.foreign_invest?.rank">country comparison to the world: {{economy?.foreign_invest?.rank}}</p>
+  </div-->
+
+  <div class="mdl-card__media"  *ngIf="economy?.exch_rate?.length>0">
+     <div class="mdl-layout-title">Exchange rate:</div>
+  </div>
+  <div>
+     <p *ngFor="let p of economy?.exch_rate">{{p}}</p>
+  </div>
+
+  <!-- Bottom Grid -->
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  </div>
